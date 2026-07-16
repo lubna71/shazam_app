@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shazam Clone - Music Recognition</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>🎵 Music Recognition</h1>
+    <p class="muted">Custom-built audio fingerprinting - no third-party recognition service.</p>
+
+    <section class="card">
+      <h2>Identify a Song</h2>
+      <button id="record-btn">🎤 Start Listening (8s)</button>
+      <p id="identify-status" class="muted"></p>
+      <div id="result-box"></div>
+    </section>
+
+    <section class="card">
+      <h2>Add Song to Database</h2>
+      <form id="add-song-form">
+        <input type="text" id="song-title" placeholder="Song title" required />
+        <input type="text" id="song-artist" placeholder="Artist (optional)" />
+        <input type="file" id="song-file" accept="audio/*" required />
+        <button type="submit">Add Song</button>
+      </form>
+      <p id="add-song-status" class="muted"></p>
+    </section>
+
+    <section class="card">
+      <h2>Songs in Database</h2>
+      <ul id="song-list"></ul>
+    </section>
+  </main>
+
+  <!-- Set this to your deployed backend URL before deploying -->
+  <script>
+    window.API_BASE_URL = "http://localhost:5000";
+  </script>
+  <script src="js/fft.js"></script>
+  <script src="js/fingerprint.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
